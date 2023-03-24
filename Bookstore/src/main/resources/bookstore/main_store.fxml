@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1168.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.mainStoreController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu fx:id="file_button" mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#logOutCall" text="Log Out" />
+                        <MenuItem mnemonicParsing="false" onAction="#saveCartCall" text="Save Cart" />
+                        <MenuItem mnemonicParsing="false" onAction="#loadCartCall" text="Load Cart" />
+                  </items>
+                </Menu>
+                <Menu fx:id="edit_button" disable="true" mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu fx:id="help_button" disable="true" mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem disable="true" mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Region prefHeight="33.0" prefWidth="1080.0" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="648.0" prefWidth="527.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="books_title_tag" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="736.0" text="SHOP BOOKS" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="618.0" prefWidth="809.0" vbarPolicy="ALWAYS">
+               <content>
+                  <GridPane fx:id="books_grid">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="648.0" prefWidth="343.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="103.0" prefWidth="343.0">
+               <children>
+                  <HBox prefHeight="34.0" prefWidth="287.0">
+                     <children>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="37.0" prefWidth="101.0" text="User Logged In: ">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="username_tag" prefHeight="34.0" prefWidth="98.0" text="username">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="343.0">
+                     <children>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="26.0" prefWidth="48.0" text="CREDITS:" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="user_credits" alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="91.0" text="2000" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="343.0">
+                     <children>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="books_toggle_button" alignment="CENTER" mnemonicParsing="false" onAction="#toggleButton" text="User Books" />
+                        <Region HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox>
+               <children>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="refresh_all_button" mnemonicParsing="false" onAction="#updateAllCall" text="Refresh All" />
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label alignment="CENTER" prefHeight="56.0" prefWidth="354.0" text="CART" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="49.0" prefWidth="287.0">
+               <children>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="save_cart_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#saveCartCall" text="Save" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="load_cart_button" mnemonicParsing="false" onAction="#loadCartCall" text="Load" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="refresh_button" mnemonicParsing="false" onAction="#updateCartCall" text="Refresh" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="clear_cart_button" mnemonicParsing="false" onAction="#clearCartCall" text="Clear" />
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="274.0" prefWidth="266.0">
+               <VBox.margin>
+                  <Insets left="15.0" right="5.0" />
+               </VBox.margin>
+               <content>
+                  <GridPane fx:id="cart_grid">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <HBox prefHeight="47.0" prefWidth="287.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="60.0" prefWidth="193.0" text="Total:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="total_tag" prefHeight="30.0" prefWidth="96.0" text="0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="15.0" right="25.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="buy_button" mnemonicParsing="false" onAction="#buyBooksCall" prefHeight="32.0" prefWidth="69.0" text="BUY" />
+                  <Region HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children></VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="34.0" prefWidth="1080.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Region prefHeight="648.0" prefWidth="22.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

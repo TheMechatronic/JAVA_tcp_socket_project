@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane minHeight="400.0" minWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstore.loginController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" minWidth="500.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+         <left>
+            <AnchorPane BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <Region layoutX="-86.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" />
+                  <ImageView fitHeight="185.0" fitWidth="258.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane prefHeight="400.0" prefWidth="393.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="44.0" layoutY="126.0" text="Username" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="46.0" layoutY="187.0" text="Password" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="username" layoutX="158.0" layoutY="127.0" promptText="Username" />
+                  <PasswordField fx:id="password" layoutX="158.0" layoutY="188.0" onAction="#onEnter" promptText="Password" />
+                  <Button fx:id="login_button" layoutX="186.0" layoutY="260.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="Log In" />
+                  <Button fx:id="new_user_button" layoutX="79.0" layoutY="260.0" mnemonicParsing="false" onAction="#newUserCall" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: white;" text="New User" />
+                  <Label fx:id="wrong_log_in" layoutX="79.0" layoutY="97.0" prefHeight="18.0" prefWidth="184.0" textFill="RED" />
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+</GridPane>
